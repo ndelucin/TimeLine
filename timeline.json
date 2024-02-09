@@ -1,0 +1,109 @@
+{
+    "title": {
+        "media": {
+            "url": "//www.flickr.com/photos/tm_10001/2310475988/",
+            "caption": "Whitney Houston performing on her My Love is Your Love Tour in Hamburg."
+        },
+        "text": {
+            "headline": "Nico's TimeLine",
+            "text": "Une frise chronologique pour ma culture générale"
+        }
+    },
+    "events": [
+        {
+            "start_date": {
+                "month": "9",
+                "day": "3",
+                "year": "1976"
+            },
+            "text": {
+                "headline": "Naissance",
+                "text": "<p>Nicolas est né à Thonon Les Bains.</p><p>C'est le fils de <b>Catherine</b> & <b>Jean-Claude</b></p>"
+            },
+            "group": "perso"
+
+        },
+        {
+            "start_date": {
+                "month": "9",
+                "day": "13",
+                "year": "2003"
+            },
+            "text": {
+                "headline": "Mariage",
+                "text": "<p>balblblaba</p>"
+            },
+            "group": "perso"
+
+        },
+        {
+            "start_date": {
+                "year": "2000"
+            },
+            "end_date": {
+                "year": "2017"
+            },
+            "text": {
+                "headline": "Capgemini",
+                "text": "<p>balblblaba</p>"
+            },
+            "group": "pro"
+
+        },
+        {
+            "start_date": {
+                "year": "2017"
+            },
+            "end_date": {
+                "year": "2021"
+            },
+            "text": {
+                "headline": "Thales",
+                "text": "<p>balblblaba</p>"
+            },
+            "group": "pro"
+
+        },
+        {
+            "start_date": {
+                "year": "2021"
+            },
+            "end_date": {
+                "year": "2027"
+            },
+            "text": {
+                "headline": "Schneider",
+                "text": "<p>balblblaba</p>"
+            },
+            "group": "pro"
+
+        },
+        {
+            "start_date": {
+                "year": "2017"
+            },
+            "end_date": {
+                "year": "2022"
+            },
+            "text": {
+                "headline": "DCES",
+                "text": "<p>balblblaba</p>"
+            },
+            "group": "pro"
+
+        }
+    ],
+    "eras": [
+        {
+            "start_date": {
+                "year": "1994"
+            },
+            "end_date": {
+                "year": "2000"
+            } ,
+            "text": {
+                "headline": "Etudes supp"
+            } 
+        }
+    ]
+}
