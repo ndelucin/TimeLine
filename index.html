@@ -1,0 +1,152 @@
+<meta charset="utf-8">
+<title>Timeline — Renaissance française</title>
+<link href="https://unpkg.com/vis-timeline@7.7.3/styles/vis-timeline-graph2d.min.css" rel="stylesheet">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    background: #f7f5f0;
+    color: #2b2b2b;
+  }
+  header {
+    padding: 1.5rem 2rem 1rem;
+    border-bottom: 1px solid #ddd8cc;
+  }
+  h1 {
+    margin: 0 0 0.25rem;
+    font-size: 1.4rem;
+  }
+  header p {
+    margin: 0;
+    color: #666;
+    font-size: 0.9rem;
+  }
+  #timeline {
+    margin: 1.5rem 2rem;
+    border: 1px solid #ddd8cc;
+    background: #fff;
+  }
+  #error {
+    margin: 1.5rem 2rem;
+    padding: 1rem;
+    background: #fde8e8;
+    color: #8a1f1f;
+    border: 1px solid #f3b4b4;
+    display: none;
+  }
+  .vis-item {
+    border-color: #b08d57;
+    background-color: #f1e4c9;
+  }
+  .vis-item.vis-selected {
+    border-color: #8a1f1f;
+    background-color: #f3d9b1;
+  }
+  .vis-item.vis-cluster {
+    border-color: #8a1f1f;
+    background-color: #8a1f1f;
+    color: #fff;
+    font-weight: 600;
+  }
+  #legend {
+    margin: 0 2rem 1rem;
+    font-size: 0.82rem;
+    color: #555;
+    line-height: 1.5;
+  }
+  #legend b {
+    color: #2b2b2b;
+  }
+</style>
+
+<header>
+  <h1>Timeline historique — Renaissance française</h1>
+  <p>Quelques jalons politiques, artistiques et architecturaux du XVIe siècle.</p>
+</header>
+
+<div id="legend">
+  <b>Groupes imbriqués</b> : cliquez le triangle à gauche d'un groupe parent (Politique &amp; Guerre, Arts &amp; Lettres, Architecture) pour replier/déplier ses sous-groupes.
+  <b>Stacking</b> : zoomez sur « Châteaux de la Loire » ou « Peinture &amp; Sculpture » — les plages qui se chevauchent s'empilent verticalement au lieu de se superposer.
+  <b>Clustering</b> : dézoomez sur « Guerres &amp; Batailles » — les événements proches (1515-1544) fusionnent en une bulle cliquable qui se déplie au zoom.
+</div>
+
+<div id="error">Impossible de charger data/events.json.</div>
+<div id="timeline"></div>
+
+<script src="https://unpkg.com/vis-timeline@7.7.3/standalone/umd/vis-timeline-graph2d.min.js"></script>
+<script>
+  fetch("data/events.json")
+    .then(function (response) {
+      if (!response.ok) {
+        throw new Error("HTTP " + response.status);
+      }
+      return response.json();
+    })
+    .then(function (events) {
+      // Hiérarchie des groupes : les enfants (avec "parent") sont nichés
+      // sous leur groupe parent via l'option vis-timeline "nestedGroups".
+      var GROUP_DEFS = [
+        { id: "pol", content: "Politique & Guerre" },
+        { id: "guerre", content: "Guerres & Batailles", parent: "pol" },
+        { id: "diplo", content: "Diplomatie & Société", parent: "pol" },
+
+        { id: "arts", content: "Arts & Lettres" },
+        { id: "litt", content: "Littérature", parent: "arts" },
+        { id: "peinture", content: "Peinture & Sculpture", parent: "arts" },
+
+        { id: "archi", content: "Architecture" },
+        { id: "loire", content: "Châteaux de la Loire", parent: "archi" },
+        { id: "paris", content: "Urbanisme parisien", parent: "archi" }
+      ];
+
+      var items = new vis.DataSet(
+        events.map(function (event) {
+          return {
+            id: event.id,
+            content: event.title,
+            start: event.start,
+            end: event.end,
+            group: event.group,
+            title: event.description
+          };
+        })
+      );
+
+      var parents = GROUP_DEFS.filter(function (g) { return !g.parent; });
+      var groups = new vis.DataSet(
+        parents.map(function (parent) {
+          var childIds = GROUP_DEFS
+            .filter(function (g) { return g.parent === parent.id; })
+            .map(function (g) { return g.id; });
+          return {
+            id: parent.id,
+            content: parent.content,
+            nestedGroups: childIds.length ? childIds : undefined
+          };
+        }).concat(
+          GROUP_DEFS.filter(function (g) { return g.parent; }).map(function (g) {
+            return { id: g.id, content: g.content };
+          })
+        )
+      );
+
+      var container = document.getElementById("timeline");
+      var options = {
+        stack: true,
+        showCurrentTime: false,
+        zoomMin: 1000 * 60 * 60 * 24 * 30,
+        margin: { item: 12 },
+        cluster: {
+          maxItems: 3,
+          titleTemplate: "{count} événements groupés — zoomez pour les distinguer"
+        }
+      };
+
+      new vis.Timeline(container, items, groups, options);
+    })
+    .catch(function (err) {
+      document.getElementById("error").style.display = "block";
+      console.error(err);
+    });
+</script>

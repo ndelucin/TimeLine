@@ -1,0 +1,30 @@
+[
+  { "id": 1, "title": "Bataille de Marignan", "start": "1515-09-13", "end": "1515-09-14", "group": "guerre", "description": "Victoire de François Ier sur les Suisses, qui ouvre la voie à la conquête du Milanais." },
+  { "id": 2, "title": "Perte de Milan", "start": "1521-11-19", "group": "guerre", "description": "Les forces franco-vénitiennes sont chassées du Milanais par les troupes impériales et pontificales." },
+  { "id": 3, "title": "Bataille de la Bicoque", "start": "1522-04-27", "group": "guerre", "description": "Défaite française qui confirme la perte du Milanais face aux troupes de Charles Quint." },
+  { "id": 4, "title": "Bataille de Pavie", "start": "1525-02-24", "group": "guerre", "description": "Désastre militaire majeur : François Ier est capturé et emmené prisonnier à Madrid." },
+  { "id": 5, "title": "Bataille de Cérisoles", "start": "1544-04-14", "group": "guerre", "description": "Victoire française lors de la dernière des guerres d'Italie de François Ier." },
+
+  { "id": 6, "title": "Concordat de Bologne", "start": "1516-08-18", "group": "diplo", "description": "Accord entre François Ier et le pape Léon X donnant au roi le contrôle des nominations épiscopales." },
+  { "id": 7, "title": "Camp du Drap d'Or", "start": "1520-06-07", "end": "1520-06-24", "group": "diplo", "description": "Rencontre diplomatique faste entre François Ier et Henri VIII d'Angleterre près de Calais." },
+  { "id": 8, "title": "Ordonnance de Villers-Cotterêts", "start": "1539-08-15", "group": "diplo", "description": "Le français devient la langue officielle de l'administration et de la justice, au détriment du latin." },
+  { "id": 9, "title": "Édit de Nantes", "start": "1598-04-30", "group": "diplo", "description": "Henri IV accorde un statut légal aux protestants et met fin aux guerres de Religion." },
+
+  { "id": 10, "title": "Publication de Pantagruel", "start": "1532-01-01", "group": "litt", "description": "Rabelais publie Pantagruel, premier volet de son œuvre satirique majeure." },
+  { "id": 11, "title": "Publication de Gargantua", "start": "1534-01-01", "group": "litt", "description": "Rabelais publie Gargantua, jalon important de la littérature humaniste française." },
+  { "id": 12, "title": "Manifeste de la Pléiade", "start": "1549-01-01", "group": "litt", "description": "Du Bellay publie 'Défense et illustration de la langue française', programme littéraire du groupe de la Pléiade." },
+  { "id": 13, "title": "Publication des Essais de Montaigne", "start": "1580-01-01", "group": "litt", "description": "Première édition des Essais, œuvre fondatrice de la pensée humaniste française." },
+
+  { "id": 14, "title": "François Ier accueille Léonard de Vinci", "start": "1516-01-01", "group": "peinture", "description": "Léonard de Vinci s'installe au Clos Lucé, près d'Amboise, apportant avec lui la Joconde." },
+  { "id": 15, "title": "Portraits de cour par Jean Clouet", "start": "1525-01-01", "end": "1540-01-01", "group": "peinture", "description": "Jean Clouet devient le grand portraitiste officiel de la cour de François Ier." },
+  { "id": 16, "title": "École de Fontainebleau", "start": "1530-01-01", "end": "1570-01-01", "group": "peinture", "description": "Courant pictural et décoratif italo-français développé autour du château de Fontainebleau." },
+  { "id": 17, "title": "Galerie François Ier à Fontainebleau", "start": "1533-01-01", "end": "1540-01-01", "group": "peinture", "description": "Rosso Fiorentino puis le Primatice décorent la célèbre galerie du château de Fontainebleau." },
+
+  { "id": 18, "title": "Remaniements du château d'Amboise", "start": "1503-01-01", "end": "1519-01-01", "group": "loire", "description": "Travaux de style gothique flamboyant puis Renaissance menés sous Louis XII puis François Ier." },
+  { "id": 19, "title": "Aile François Ier au château de Blois", "start": "1515-01-01", "end": "1524-01-01", "group": "loire", "description": "Construction de la célèbre aile Renaissance et de son escalier à loggias au château de Blois." },
+  { "id": 20, "title": "Construction du château de Chambord", "start": "1519-01-01", "end": "1547-01-01", "group": "loire", "description": "Édification du chef-d'œuvre emblématique de l'architecture Renaissance française voulu par François Ier." },
+
+  { "id": 21, "title": "Reconstruction du Louvre par Pierre Lescot", "start": "1546-01-01", "end": "1559-01-01", "group": "paris", "description": "Henri II fait raser le vieux donjon médiéval et reconstruire l'aile Lescot dans le style Renaissance." },
+  { "id": 22, "title": "Construction du palais des Tuileries", "start": "1564-01-01", "end": "1570-01-01", "group": "paris", "description": "Catherine de Médicis fait édifier un nouveau palais à l'ouest du Louvre." },
+  { "id": 23, "title": "Début de la construction du Pont Neuf", "start": "1578-01-01", "end": "1607-01-01", "group": "paris", "description": "Henri III puis Henri IV font construire le premier pont parisien sans maisons." }
+]
